@@ -398,7 +398,8 @@ async function handleChoice(choice){
     document.getElementById('upzone').classList.remove('hidden');
   }else if(choice==='🍽️ Calcular su alimento'){
     S.step='calc_w';
-    const pesoSug=S.dog.breed?getRazaInfo(S.dog.breed)?.peso:'':null;
+    const razaInfo=S.dog.breed?getRazaInfo(S.dog.breed):null;
+    const pesoSug=razaInfo?razaInfo.peso:null;
     const msg=pesoSug&&pesoSug!=='Variable'
       ?`Vamos con la tabla oficial de Colmillo Blanco 📋 Para un <b>${S.dog.breed}</b> el peso típico es <b>${pesoSug}</b>. ¿Cuánto pesa exactamente tu perro en kilos?`
       :'Vamos con la tabla oficial de Colmillo Blanco 📋 ¿Cuánto pesa tu perro en kilos?';
