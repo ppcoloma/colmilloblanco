@@ -15,18 +15,13 @@
 }
 body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
 .widget{width:100%;max-width:420px;background:var(--black2);border-radius:20px;overflow:hidden;border:1px solid var(--gold-border);display:flex;flex-direction:column;height:720px;box-shadow:0 0 60px rgba(212,175,55,0.06),0 20px 60px rgba(0,0,0,0.6)}
-
-/* Header con logo */
 .header{background:var(--black);padding:12px 18px;display:flex;align-items:center;gap:12px;flex-shrink:0;border-bottom:1px solid var(--gold-border)}
-.header-logo{height:48px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(212,175,55,0.3))}
 .logo-fallback{font-family:'Cinzel',serif;font-size:17px;font-weight:600;line-height:1.1}
 .logo-fallback .l1{color:var(--gold3);display:block}
 .logo-fallback .l2{color:var(--gold);display:block}
 .logo-sub{font-size:10px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:2px}
 .dot{width:6px;height:6px;background:#5CC878;border-radius:50%;display:inline-block;margin-right:4px}
 .status-txt{font-size:11px;color:var(--muted)}
-
-/* Chat */
 .chat{flex:1;overflow-y:auto;padding:16px 14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
 .chat::-webkit-scrollbar{width:3px}.chat::-webkit-scrollbar-thumb{background:var(--gold-border);border-radius:2px}
 .msg{display:flex;gap:8px;align-items:flex-end;animation:fadeUp 0.3s ease}
@@ -38,8 +33,6 @@ body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;displa
 .msg.user .bubble{background:var(--gold2);color:var(--black);border-bottom-right-radius:3px;font-weight:500}
 .bubble b{font-weight:600;color:var(--gold3)}
 .msg.user .bubble b{color:var(--black2)}
-
-/* Raza card */
 .raza-card{background:var(--black);border:1px solid var(--gold-border);border-radius:14px;padding:14px;margin:2px 0}
 .raza-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);font-weight:600;margin-bottom:10px}
 .raza-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -47,22 +40,20 @@ body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;displa
 .raza-item .ri-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:2px}
 .raza-item .ri-val{font-size:12.5px;color:var(--cream);font-weight:500}
 .raza-tip{margin-top:10px;background:rgba(212,175,55,0.06);border-left:2px solid var(--gold2);border-radius:0 8px 8px 0;padding:8px 10px;font-size:12.5px;color:var(--cream2);line-height:1.5}
-
-/* Quick replies */
 .qrs{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 8px}
 .qr{background:transparent;border:1px solid var(--gold-border);color:var(--gold);font-family:'DM Sans',sans-serif;font-size:12.5px;padding:7px 13px;border-radius:20px;cursor:pointer;transition:all 0.18s}
 .qr:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
-
-/* Upload */
 .upload-zone{margin:4px 14px 8px;border:1px dashed var(--gold-border);border-radius:12px;padding:18px;text-align:center;cursor:pointer;transition:all 0.2s;background:var(--gold-dim)}
 .upload-zone:hover{border-color:var(--gold)}
 .upload-zone input{display:none}
 .upload-zone p{font-size:12.5px;color:var(--muted);margin-top:6px}
-
-/* Cards */
+/* Cards con botón cerrar */
 .fc{margin:4px 14px 8px}
+.closeable{position:relative}
+.close-btn{position:absolute;top:10px;right:10px;background:rgba(212,175,55,0.15);border:1px solid var(--gold-border);color:var(--gold);width:24px;height:24px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;line-height:1;transition:all 0.2s;z-index:10}
+.close-btn:hover{background:var(--gold);color:var(--black)}
 .result-card{background:var(--black);border:1px solid var(--gold-border);border-radius:14px;padding:16px}
-.rc-title{font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:12px}
+.rc-title{font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:12px;padding-right:28px}
 .rrow{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(212,175,55,0.08)}
 .rrow:last-child{border:none}
 .rlabel{font-size:11.5px;color:var(--muted)}
@@ -74,13 +65,18 @@ body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;displa
 .prod-info p{font-size:11.5px;color:var(--muted);line-height:1.4}
 .prod-badges{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap}
 .pbadge{background:rgba(212,175,55,0.1);border:1px solid var(--gold-border);color:var(--gold);font-size:10px;padding:2px 7px;border-radius:10px}
-
 /* Mapa */
-.map-card{background:var(--black);border:1px solid var(--gold-border);border-radius:14px;overflow:hidden;margin-top:8px}
+.map-card{background:var(--black);border:1px solid var(--gold-border);border-radius:14px;overflow:hidden;margin-top:8px;position:relative}
 .map-card iframe{width:100%;height:220px;border:none;display:block}
 .map-footer{padding:8px 12px;font-size:11.5px;color:var(--muted);text-align:center}
 .map-footer a{color:var(--gold);text-decoration:none}
-
+/* Límite preguntas */
+.limit-bar{margin:0 14px 8px;background:var(--black);border:1px solid var(--gold-border);border-radius:10px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between}
+.limit-txt{font-size:11.5px;color:var(--muted)}
+.limit-dots{display:flex;gap:4px}
+.limit-dot{width:8px;height:8px;border-radius:50%;background:var(--gold-border)}
+.limit-dot.used{background:var(--gold2)}
+.limit-unlock{font-size:11px;color:var(--gold);cursor:pointer;text-decoration:underline}
 /* Form */
 .form-card{background:var(--black);border:1px solid var(--gold-border);border-radius:14px;padding:16px;margin-top:8px}
 .form-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);margin-bottom:12px;font-weight:600}
@@ -95,12 +91,10 @@ body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;displa
 .contact-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
 .contact-opt{background:var(--black2);border:1px solid var(--gold-border);border-radius:8px;padding:8px 10px;cursor:pointer;text-align:center;transition:all 0.2s}
 .contact-opt.active{border-color:var(--gold);background:var(--gold-dim)}
-.contact-opt p{font-size:11px;color:var(--muted);margin-top:2px}
 .contact-opt h5{font-size:13px;color:var(--cream);font-weight:500}
+.contact-opt p{font-size:11px;color:var(--muted);margin-top:2px}
 .btn{width:100%;background:var(--gold2);color:var(--black);border:none;border-radius:10px;padding:11px;font-family:'Cinzel',serif;font-size:13px;font-weight:600;cursor:pointer;margin-top:10px;transition:background 0.2s;letter-spacing:0.04em}
 .btn:hover{background:var(--gold3)}
-
-/* Input bar */
 .ibar{padding:10px 14px;border-top:1px solid var(--gold-border);display:flex;gap:8px;align-items:center;flex-shrink:0;background:var(--black)}
 .ibar input{flex:1;background:var(--black3);border:1px solid var(--gold-border);border-radius:20px;padding:9px 15px;font-size:13.5px;font-family:'DM Sans',sans-serif;color:var(--cream);outline:none}
 .ibar input::placeholder{color:var(--muted)}
@@ -118,13 +112,12 @@ body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;displa
 </head>
 <body>
 <div class="widget">
-  <!-- Header con logo -->
   <div class="header">
-    <img class="header-logo"
+    <img height="44" style="object-fit:contain;filter:drop-shadow(0 2px 8px rgba(212,175,55,0.3))"
       src="https://colmilloblanco.cl/wp-content/uploads/2023/logo-colmillo-blanco.png"
-      onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='block'"
+      onerror="this.style.display='none';document.getElementById('lf').style.display='block'"
       alt="Colmillo Blanco">
-    <div id="logo-fallback" style="display:none">
+    <div id="lf" style="display:none">
       <div class="logo-fallback"><span class="l1">Colmillo</span><span class="l2">Blanco</span></div>
       <div class="logo-sub">Nutrición Ancestral</div>
     </div>
@@ -133,9 +126,15 @@ body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;displa
       <div class="status-txt" style="font-size:10px;margin-top:2px">Experto en perros</div>
     </div>
   </div>
-
   <div class="chat" id="chat"></div>
   <div id="qrs" class="qrs hidden"></div>
+  <div id="limit-bar" class="limit-bar hidden">
+    <div>
+      <div class="limit-txt">Preguntas gratis</div>
+      <div class="limit-dots" id="limit-dots"></div>
+    </div>
+    <span class="limit-unlock" onclick="triggerUnlock()">Registrarme para más →</span>
+  </div>
   <div id="upzone" class="upload-zone hidden">
     <label for="fileinput" style="cursor:pointer;display:block">
       <div style="font-size:28px">📸</div>
@@ -153,8 +152,10 @@ body{font-family:'DM Sans',sans-serif;background:#1A1208;min-height:100vh;displa
 
 <script>
 const BACKEND = 'https://colmilloblanco.vercel.app/api/chat';
-const MAPS_URL = 'https://www.google.com/maps/d/embed?mid=11MoJFAJdZeSkaFODv7AbFiWIVHk6lf0';
+const MAPS_BASE = 'https://www.google.com/maps/d/embed?mid=11MoJFAJdZeSkaFODv7AbFiWIVHk6lf0';
 const MAPS_FULL = 'https://www.google.com/maps/d/u/0/edit?mid=11MoJFAJdZeSkaFODv7AbFiWIVHk6lf0';
+const FREE_LIMIT = 3;
+const REG_LIMIT = 10;
 
 // ── TABLA OFICIAL ─────────────────────────────────────────────────────────
 const TABLA={
@@ -182,15 +183,14 @@ function calcFood(w,age,activity){
   const row=t.rangos.find(r=>w>r.min&&w<=r.max)||t.rangos[t.rangos.length-1];
   let ds=cat==='cachorro'?row.vals[getFase(age)]:row.v;
   let mid=midVal(ds);
-  // Ajuste por actividad
   if(activity==='alta') mid=Math.round(mid*1.2);
   else if(activity==='baja') mid=Math.round(mid*0.85);
-  const bag20=mid>0?Math.round(20000/mid):null;
-  const monthly=Math.round(mid*30);
-  return{cat,label:cat==='cachorro'?'Cachorro':cat==='senior'?'Senior (7+ años)':'Adulto',dailyStr:activity&&activity!=='normal'?`~${mid}`:ds,mid,bag20,monthly};
+  const adjusted=(activity&&activity!=='normal');
+  return{cat,label:cat==='cachorro'?'Cachorro':cat==='senior'?'Senior (7+ años)':'Adulto',
+    dailyStr:adjusted?'~'+mid:ds,mid,bag20:mid>0?Math.round(20000/mid):null,monthly:Math.round(mid*30)};
 }
 
-// ── INFO DE RAZAS ─────────────────────────────────────────────────────────
+// ── RAZAS ─────────────────────────────────────────────────────────────────
 const RAZAS={
   'golden retriever':{tam:'Grande',peso:'25–34 kg',energia:'⚡⚡⚡⚡ Muy alta',pelo:'Largo, cepillado 3x/semana',vida:'10–12 años',tip:'Son muy golosos — mide la ración con exactitud para evitar sobrepeso.'},
   'golden':{tam:'Grande',peso:'25–34 kg',energia:'⚡⚡⚡⚡ Muy alta',pelo:'Largo, cepillado 3x/semana',vida:'10–12 años',tip:'Son muy golosos — mide la ración con exactitud para evitar sobrepeso.'},
@@ -217,19 +217,32 @@ function getRazaInfo(breed){
   return RAZAS[key]||Object.entries(RAZAS).find(([k])=>key.includes(k)||k.includes(key))?.[1]||null;
 }
 
-// ── FAQ PREDEFINIDAS ──────────────────────────────────────────────────────
+// ── FAQ ───────────────────────────────────────────────────────────────────
 const FAQ=[
-  {keys:['tóxico','veneno','peligro','no puede comer','malo para'],resp:'🚫 <b>Alimentos tóxicos para perros:</b> chocolate, uvas y pasas, cebolla, ajo, aguacate, xilitol (edulcorante artificial), macadamia y alcohol. ¡Mantenlos siempre fuera de su alcance!'},
-  {keys:['baño','bañar','shampoo'],resp:'🛁 En general cada <b>3–4 semanas</b> es suficiente. Razas de pelo largo pueden necesitar cada 2 semanas. Usa siempre shampoo neutro para mascotas, nunca shampoo humano.'},
-  {keys:['uña','cortar uña','garras'],resp:'✂️ Las uñas se cortan cada <b>3–4 semanas</b>. Si escuchas que suenan al caminar en piso duro, ya es hora. Corta solo la punta, evitando la zona rosada que tiene vasos sanguíneos.'},
-  {keys:['vacuna','vacunación','vacunar'],resp:'💉 Las vacunas básicas son: <b>Séxtuple</b> (parvovirus, moquillo, hepatitis) y <b>Rabia</b>. Cachorros desde las 6–8 semanas, luego refuerzos anuales. Consulta a tu veterinario para el calendario exacto.'},
-  {keys:['cachorro','cuándo cambiar','adulto cuándo'],resp:'🐶 El cambio de cachorro a adulto depende del tamaño: razas pequeñas a los <b>10–12 meses</b>, medianas a los <b>12 meses</b>, grandes a los <b>18–24 meses</b>. Colmillo Blanco es multi-etapas, vale para todas las edades.'},
-  {keys:['no quiere comer','no come','perdió el apetito'],resp:'😟 Si tu perro no quiere comer más de <b>2 días</b>, consulta al veterinario. Causas comunes: estrés, calor excesivo o cambio de alimento muy brusco. Para cambiar de alimento, hazlo gradualmente en 7–10 días.'},
-  {keys:['sobrepeso','gordo','obeso','adelgazar'],resp:'⚖️ Presiona las costillas suavemente — deberías sentirlas sin ver grasa excesiva. Si hay sobrepeso, <b>reduce un 20% la ración</b> y aumenta el ejercicio. Divide en 2 comidas y elimina premios extra.'},
-  {keys:['agua','hidratación','cuánta agua'],resp:'💧 Un perro necesita aproximadamente <b>50–60 ml de agua por kilo</b> al día. Siempre agua fresca disponible. En verano o después del ejercicio la necesidad aumenta.'},
-  {keys:['cambiar alimento','cambio de comida','transición','mezclar alimento'],resp:'🔄 Cambia gradualmente en <b>7–10 días</b>: días 1–3: 75% antiguo + 25% Colmillo Blanco. Días 4–6: 50/50. Días 7–9: 25% antiguo + 75% CB. Día 10: 100% Colmillo Blanco.'},
-  {keys:['colmillo blanco','ingredientes','composición','proteína'],resp:'🐺 Colmillo Blanco tiene <b>29% de proteína total</b>, con el <b>85% de origen animal</b> — carne de vacuno como primer ingrediente. Multi-etapas (cachorro, adulto y senior). Nutrición Ancestral.'},
-  {keys:['precio','cuánto cuesta','saco','comprar','dónde comprar','tienda'],resp:'🛒 Puedes encontrar Colmillo Blanco en pet shops y veterinarias de todo Chile. ¿En qué ciudad estás? Te muestro el mapa con los puntos de venta más cercanos.'},
+  {keys:['por qué colmillo','por que colmillo','qué tiene de especial','que tiene de especial','diferencia','mejor alimento'],
+   resp:'🐺 Colmillo Blanco tiene <b>29% de proteína total</b> con el <b>85% de origen animal</b> — carne de vacuno como primer ingrediente. Es multi-etapas (sirve para cachorro, adulto y senior) y está formulado bajo el concepto de <b>Nutrición Ancestral</b>, respetando la dieta natural del perro.'},
+  {keys:['dónde encuentro','donde encuentro','dónde comprar','donde comprar','punto de venta','tienda','pet shop'],
+   resp:'🛒 Puedes encontrar Colmillo Blanco en pet shops y veterinarias de todo Chile. ¿En qué ciudad o comuna estás? Te muestro el mapa con los puntos más cercanos.'},
+  {keys:['precio','cuánto cuesta','cuanto cuesta','valor del saco'],
+   resp:'💰 Colmillo Blanco ofrece una excelente relación calidad-precio. El saco de 20 kg rinde mucho más que marcas similares gracias a su alta densidad nutricional — necesitas dar menos gramos por día. Para saber el precio exacto consulta en tu pet shop más cercano.'},
+  {keys:['tóxico','veneno','peligro','no puede comer','malo para'],
+   resp:'🚫 <b>Alimentos tóxicos para perros:</b> chocolate, uvas y pasas, cebolla, ajo, aguacate, xilitol, macadamia y alcohol. ¡Siempre fuera de su alcance!'},
+  {keys:['baño','bañar','shampoo'],
+   resp:'🛁 Cada <b>3–4 semanas</b> es suficiente en general. Razas de pelo largo cada 2 semanas. Usa siempre shampoo neutro para mascotas.'},
+  {keys:['uña','cortar uña','garras'],
+   resp:'✂️ Cada <b>3–4 semanas</b>. Si suenan al caminar en piso duro, ya es hora. Corta solo la punta blanca, evitando la zona rosada.'},
+  {keys:['vacuna','vacunación','vacunar'],
+   resp:'💉 Vacunas básicas: <b>Séxtuple</b> (parvovirus, moquillo, hepatitis) y <b>Rabia</b>. Cachorros desde las 6–8 semanas, refuerzos anuales. Consulta a tu veterinario.'},
+  {keys:['no quiere comer','no come','perdió el apetito'],
+   resp:'😟 Si no come más de <b>2 días</b>, consulta al veterinario. Causas comunes: estrés, calor o cambio de alimento brusco. Para cambiar, mezcla gradualmente en 7–10 días.'},
+  {keys:['sobrepeso','gordo','obeso','adelgazar'],
+   resp:'⚖️ Presiona las costillas — deberías sentirlas sin ver grasa excesiva. Si hay sobrepeso, <b>reduce un 20% la ración</b> y aumenta el ejercicio. Sin premios extra.'},
+  {keys:['agua','hidratación','cuánta agua'],
+   resp:'💧 Aproximadamente <b>50–60 ml por kilo</b> al día. Siempre agua fresca disponible. En verano o después de ejercicio, más.'},
+  {keys:['cambiar alimento','cambio de comida','transición'],
+   resp:'🔄 Cambia en <b>7–10 días</b>: días 1–3: 75% antiguo + 25% CB. Días 4–6: 50/50. Días 7–9: 25% antiguo + 75% CB. Día 10: 100% Colmillo Blanco.'},
+  {keys:['proteína','ingredientes','composición'],
+   resp:'🐺 <b>29% proteína total</b>, <b>85% de origen animal</b>. Carne de vacuno como primer ingrediente. Sin rellenos innecesarios. Formulado para criadores exigentes.'},
 ];
 function getFAQResponse(text){
   const t=text.toLowerCase();
@@ -237,9 +250,39 @@ function getFAQResponse(text){
 }
 
 // ── ESTADO ────────────────────────────────────────────────────────────────
-let S={step:'welcome',dog:{},user:{},hist:[],contactType:'email'};
+let S={step:'welcome',dog:{},user:{},hist:[],freeQs:0,registered:false,contactType:'email'};
+
 const chatEl=()=>document.getElementById('chat');
 const scroll=()=>setTimeout(()=>chatEl().scrollTop=chatEl().scrollHeight,60);
+
+// ── LÍMITE DE PREGUNTAS ───────────────────────────────────────────────────
+function updateLimitBar(){
+  if(S.registered) return;
+  const bar=document.getElementById('limit-bar');
+  const dots=document.getElementById('limit-dots');
+  bar.classList.remove('hidden');
+  dots.innerHTML='';
+  for(let i=0;i<FREE_LIMIT;i++){
+    const d=document.createElement('div');
+    d.className='limit-dot'+(i<S.freeQs?' used':'');
+    dots.appendChild(d);
+  }
+}
+function checkLimit(){
+  if(S.registered) return true;
+  if(S.freeQs>=FREE_LIMIT){
+    addMsg('bot','Has usado tus <b>3 preguntas gratis</b> 🐾 Regístrate gratis para desbloquear <b>10 preguntas</b> y recomendaciones personalizadas para tu perro.');
+    triggerUnlock();
+    return false;
+  }
+  S.freeQs++;
+  updateLimitBar();
+  return true;
+}
+function triggerUnlock(){
+  document.getElementById('fc').classList.remove('hidden');
+  showRegForm();
+}
 
 function addMsg(role,html){
   const d=document.createElement('div');d.className=`msg ${role}`;
@@ -281,12 +324,24 @@ function setQR(opts){
     el.appendChild(b);
   });
 }
+function clearFC(){
+  const fc=document.getElementById('fc');
+  fc.innerHTML='';fc.classList.add('hidden');
+}
+function addCloseBtn(container,label){
+  const btn=document.createElement('button');
+  btn.className='close-btn';btn.innerHTML='✕';btn.title='Cerrar '+label;
+  btn.onclick=()=>clearFC();
+  container.style.position='relative';
+  container.appendChild(btn);
+}
 
 function showResult(dog,calc){
   const fc=document.getElementById('fc');fc.classList.remove('hidden');fc.innerHTML='';
   let pt='';
   if(calc.cat==='cachorro'){const lb=['Destete–4m','4–8 meses','9–12 meses'];pt=` <span class="badge">${lb[getFase(dog.age)]}</span>`;}
   const actLabel=dog.activity==='alta'?'Alta':dog.activity==='baja'?'Baja':'Normal';
+  const wrap=document.createElement('div');wrap.className='closeable';
   const div=document.createElement('div');div.className='result-card';
   div.innerHTML=`
     <div class="rc-title">📊 Perfil de ${dog.name||'tu perro'}${pt}</div>
@@ -297,24 +352,39 @@ function showResult(dog,calc){
     <div class="rrow"><span class="rlabel">Porción diaria</span><span class="rval hi">${calc.dailyStr} gr/día</span></div>
     <div class="rrow"><span class="rlabel">Consumo mensual</span><span class="rval">${calc.monthly} gr</span></div>
     <div class="rrow"><span class="rlabel">Saco 20 kg dura</span><span class="rval hi">~${calc.bag20} días</span></div>`;
-  fc.appendChild(div);
+  wrap.appendChild(div);
+  addCloseBtn(wrap,'perfil');
   const pd=document.createElement('div');pd.className='prod-card';
   pd.innerHTML=`<div class="prod-info"><h4>Colmillo Blanco 20 kg</h4><p>Nutrición Ancestral · Todas las etapas</p><div class="prod-badges"><span class="pbadge">85% proteína animal</span><span class="pbadge">29% proteína total</span><span class="pbadge">Multi-etapas</span></div></div>`;
-  fc.appendChild(pd);scroll();
+  wrap.appendChild(pd);
+  fc.appendChild(wrap);scroll();
 }
 
-function showMap(){
+function showMap(city){
   const fc=document.getElementById('fc');fc.classList.remove('hidden');
-  const existing=document.getElementById('map-card-el');if(existing)existing.remove();
-  const div=document.createElement('div');div.className='map-card';div.id='map-card-el';
-  div.innerHTML=`
-    <iframe src="${MAPS_URL}" allowfullscreen loading="lazy"></iframe>
-    <div class="map-footer">📍 Puntos de venta Colmillo Blanco · <a href="${MAPS_FULL}" target="_blank">Ver mapa completo</a></div>`;
-  fc.appendChild(div);scroll();
+  const existing=document.getElementById('map-wrap');if(existing)existing.remove();
+  // Coordenadas aproximadas por ciudad chilena
+  const coords={
+    'santiago':[-33.45,-70.67,11],'valparaíso':[-33.03,-71.63,12],'viña del mar':[-33.02,-71.55,13],
+    'concepción':[-36.82,-73.05,12],'antofagasta':[-23.65,-70.40,12],'temuco':[-38.74,-72.59,12],
+    'la serena':[-29.91,-71.25,12],'puerto montt':[-41.47,-72.94,12],'iquique':[-20.21,-70.15,12],
+    'rancagua':[-34.17,-70.74,12],'talca':[-35.43,-71.67,12],'arica':[-18.48,-70.32,12]
+  };
+  const key=city?city.toLowerCase().trim():'';
+  const c=coords[key]||[-33.45,-70.67,8];
+  const mapUrl=`${MAPS_BASE}&ll=${c[0]},${c[1]}&z=${c[2]}`;
+  const wrap=document.createElement('div');wrap.id='map-wrap';wrap.className='closeable';
+  const card=document.createElement('div');card.className='map-card';
+  card.innerHTML=`<iframe src="${mapUrl}" allowfullscreen loading="lazy"></iframe>
+    <div class="map-footer">📍 Puntos de venta · <a href="${MAPS_FULL}" target="_blank">Ver mapa completo</a></div>`;
+  wrap.appendChild(card);
+  addCloseBtn(wrap,'mapa');
+  fc.appendChild(wrap);scroll();
 }
 
 function showRegForm(){
   const name=S.dog.name||'tu perro';
+  const existing=document.getElementById('reg-form');if(existing)return;
   const fc=document.getElementById('fc');fc.classList.remove('hidden');
   const div=document.createElement('div');div.className='form-card';div.id='reg-form';
   div.innerHTML=`
@@ -328,12 +398,12 @@ function showRegForm(){
       <div class="contact-opt active" id="opt-email" onclick="selectContact('email')">
         <h5>📧 Email</h5><p>Reporte completo</p>
       </div>
-      <div class="contact-opt" id="opt-whatsapp" onclick="selectContact('whatsapp')">
+      <div class="contact-opt" id="opt-wa" onclick="selectContact('whatsapp')">
         <h5>💬 WhatsApp</h5><p>Tips semanales</p>
       </div>
     </div>
-    <div id="contact-input" class="frow full">
-      <div class="ff"><label id="contact-label">Email</label><input id="fcontact" type="email" placeholder="pedro@mail.com"></div>
+    <div class="frow full">
+      <div class="ff"><label id="clabel">Email</label><input id="fcontact" type="email" placeholder="pedro@mail.com"></div>
     </div>
     <div class="frow full"><div class="ff"><label>¿Dónde compras alimento?</label>
       <select id="fs"><option value="">Selecciona...</option>
@@ -343,41 +413,38 @@ function showRegForm(){
     <button class="btn" onclick="submitReg()">Guardar Perfil de ${name} →</button>`;
   fc.appendChild(div);scroll();
 }
-
 function selectContact(type){
   S.contactType=type;
   document.getElementById('opt-email').classList.toggle('active',type==='email');
-  document.getElementById('opt-whatsapp').classList.toggle('active',type==='whatsapp');
-  const input=document.getElementById('fcontact');
-  const label=document.getElementById('contact-label');
-  if(type==='whatsapp'){
-    input.type='tel';input.placeholder='+56 9 1234 5678';label.textContent='WhatsApp';
-  }else{
-    input.type='email';input.placeholder='pedro@mail.com';label.textContent='Email';
-  }
+  document.getElementById('opt-wa').classList.toggle('active',type==='whatsapp');
+  const inp=document.getElementById('fcontact');
+  const lbl=document.getElementById('clabel');
+  if(type==='whatsapp'){inp.type='tel';inp.placeholder='+56 9 1234 5678';lbl.textContent='WhatsApp';}
+  else{inp.type='email';inp.placeholder='pedro@mail.com';lbl.textContent='Email';}
 }
-
 function submitReg(){
   const name=document.getElementById('fn')?.value?.trim();
   const contact=document.getElementById('fcontact')?.value?.trim();
   const city=document.getElementById('fc2')?.value?.trim();
   const shop=document.getElementById('fs')?.value;
-  if(!name||!contact){alert('Por favor ingresa tu nombre y '+( S.contactType==='whatsapp'?'WhatsApp':'email')+'.');return;}
+  if(!name||!contact){alert('Por favor ingresa tu nombre y '+(S.contactType==='whatsapp'?'WhatsApp':'email')+'.');return;}
   S.user={name,contact,contactType:S.contactType,city,shop};
-  document.getElementById('fc').classList.add('hidden');
-  const rec={fecha:new Date().toISOString(),nombre_usuario:name,
-    [S.contactType]:contact,ciudad:city,lugar_compra:shop,
-    nombre_perro:S.dog.name,raza:S.dog.breed,edad:S.dog.age,peso:S.dog.weight,
-    actividad:S.dog.activity,porcion_diaria:S.dog.calc?.dailyStr,duracion_saco_20kg:S.dog.calc?.bag20};
-  console.log('📦 REGISTRO COLMILLO BLANCO →',rec);
-  const contactMsg=S.contactType==='whatsapp'?`te escribiremos por WhatsApp al <b>${contact}</b>`:`te enviaremos info a <b>${contact}</b>`;
-  addMsg('bot',`¡Perfecto, ${name}! 🐾 El perfil de <b>${S.dog.name||'tu perro'}</b> quedó guardado y ${contactMsg}. ¡Bienvenido a la familia Colmillo Blanco!`);
-  setQR(['Consejos de alimentación','¿Dónde comprar?','¿Qué no puede comer mi perro?']);
+  S.registered=true;
+  document.getElementById('limit-bar').classList.add('hidden');
+  clearFC();
+  const rec={fecha:new Date().toISOString(),nombre_usuario:name,[S.contactType]:contact,
+    ciudad:city,lugar_compra:shop,nombre_perro:S.dog.name,raza:S.dog.breed,
+    edad:S.dog.age,peso:S.dog.weight,actividad:S.dog.activity,
+    porcion_diaria:S.dog.calc?.dailyStr,duracion_saco_20kg:S.dog.calc?.bag20};
+  console.log('📦 REGISTRO →',rec);
+  const cm=S.contactType==='whatsapp'?`te escribiremos por WhatsApp al <b>${contact}</b>`:`te enviaremos info a <b>${contact}</b>`;
+  addMsg('bot',`¡Perfecto, ${name}! 🐾 El perfil de <b>${S.dog.name||'tu perro'}</b> quedó guardado y ${cm}. ¡Bienvenido a la familia Colmillo Blanco!`);
+  setQR(['¿Por qué Colmillo Blanco?','¿Dónde encontrarlo?','Consejos de alimentación']);
   S.step='done';
 }
 
 async function callBackend(text,imageData){
-  const sys=`Eres el asistente experto en perros de Colmillo Blanco, marca chilena premium. Veterinario digital amigable. Español chileno natural. Respuestas cortas (3-4 oraciones max). NUNCA diagnostiques enfermedades ni recomiendes medicamentos. Para temas médicos serios: "consulta a tu veterinario". Menciona Colmillo Blanco naturalmente (29% proteína, 85% origen animal, Nutrición Ancestral). 1-2 emojis max. Perro: ${JSON.stringify(S.dog)}. Usuario: ${JSON.stringify(S.user)}.`;
+  const sys=`Eres el asistente experto en perros de Colmillo Blanco, marca chilena premium. Veterinario digital amigable. Español chileno natural. Respuestas cortas (3-4 oraciones max). NUNCA diagnostiques enfermedades ni recomiendes medicamentos. Para temas médicos: "consulta a tu veterinario". Menciona Colmillo Blanco naturalmente (29% proteína, 85% origen animal, Nutrición Ancestral). 1-2 emojis max. Perro: ${JSON.stringify(S.dog)}. Usuario: ${JSON.stringify(S.user)}.`;
   const body={system:sys};
   if(imageData){body.imageData=imageData;}
   else{body.messages=[...S.hist,{role:'user',content:text}];}
@@ -392,53 +459,55 @@ async function callBackend(text,imageData){
 
 async function handleChoice(choice){
   addMsg('user',choice);
+  const tl=choice.toLowerCase();
   if(choice==='🔍 Conoce la raza de tu perro'){
     S.step='photo';
-    addMsg('bot','¡Perfecto! Sube una foto de tu perro y te digo su raza, características y consejos específicos para él 📸');
+    addMsg('bot','¡Perfecto! Sube una foto de tu perro y te digo su raza, características y consejos 📸');
     document.getElementById('upzone').classList.remove('hidden');
-  }else if(choice==='🍽️ Calcular su alimento'){
+  } else if(choice==='🍽️ Calcular su alimento'){
     S.step='calc_w';
-    const razaInfo=S.dog.breed?getRazaInfo(S.dog.breed):null;
-    const pesoSug=razaInfo?razaInfo.peso:null;
-    const msg=pesoSug&&pesoSug!=='Variable'
-      ?`Vamos con la tabla oficial de Colmillo Blanco 📋 Para un <b>${S.dog.breed}</b> el peso típico es <b>${pesoSug}</b>. ¿Cuánto pesa exactamente tu perro en kilos?`
-      :'Vamos con la tabla oficial de Colmillo Blanco 📋 ¿Cuánto pesa tu perro en kilos?';
-    addMsg('bot',msg);
-  }else if(choice==='💬 Hacer una consulta'){
-    S.step='chat';addMsg('bot','¡Con gusto! ¿Qué quieres saber sobre tu perro? 🐕');
-  }else if(choice==='Sí, guardar perfil'){
-    document.getElementById('fc').classList.add('hidden');showRegForm();
-  }else if(choice==='No por ahora'){
+    const info=S.dog.breed?getRazaInfo(S.dog.breed):null;
+    const hint=info&&info.peso!=='Variable'?` Para un <b>${S.dog.breed}</b> el peso típico es <b>${info.peso}</b>.`:'';
+    addMsg('bot',`Vamos con la tabla oficial de Colmillo Blanco 📋${hint} ¿Cuánto pesa tu perro en kilos?`);
+  } else if(choice==='💬 Hacer una consulta'){
+    S.step='chat';
+    addMsg('bot','¡Con gusto! ¿Qué quieres saber? 🐕');
+  } else if(choice==='Sí, guardar perfil'){
+    clearFC();showRegForm();
+  } else if(choice==='No por ahora'){
     S.step='chat';addMsg('bot','¡Sin problema! ¿En qué más te puedo ayudar?');
-    setQR(['Consejos de alimentación','¿Dónde comprar?','Calcular de nuevo']);
-  }else if(choice==='Calcular de nuevo'){
-    S.step='calc_w';document.getElementById('fc').classList.add('hidden');
+    setQR(['¿Por qué Colmillo Blanco?','¿Dónde encontrarlo?','Calcular de nuevo']);
+  } else if(choice==='Calcular de nuevo'){
+    S.step='calc_w';clearFC();
     addMsg('bot','¿Cuánto pesa tu perro en kilos?');
-  }else if(choice==='¿Dónde comprar?'||choice==='Ver puntos de venta'){
-    addMsg('bot','Aquí tienes el mapa con todos los puntos de venta de Colmillo Blanco en Chile 📍');
-    showMap();S.step='chat';
-  }else if(choice==='Saber más de su raza'){
+  } else if(choice==='¿Dónde encontrarlo?'||choice==='Ver puntos de venta'||tl.includes('dónde')||tl.includes('donde')){
+    addMsg('bot','Aquí tienes el mapa con todos los puntos de venta en Chile 📍');
+    showMap(S.user.city||'');S.step='chat';
+  } else if(choice==='¿Por qué Colmillo Blanco?'){
+    addMsg('bot','🐺 Colmillo Blanco tiene <b>29% de proteína</b> con el <b>85% de origen animal</b> — carne de vacuno como primer ingrediente. Nutrición Ancestral: respetamos la dieta natural del perro. Multi-etapas, formulado para criadores exigentes.');
+    setQR(['¿Dónde encontrarlo?','Calcular su alimento','Más información']);
+  } else if(choice==='Saber más de su raza'){
     const info=getRazaInfo(S.dog.breed);
     if(info){addMsg('bot',`Todo sobre el <b>${S.dog.breed}</b>:`);const wrap=document.createElement('div');wrap.style.paddingLeft='34px';showRazaCard(S.dog.breed,wrap);chatEl().appendChild(wrap);}
     else{await processText('Cuéntame más sobre la raza de mi perro');}
-  }else{await processText(choice);}
+  } else {
+    await processText(choice);
+  }
 }
 
 async function processText(text){
-  // Detectar si pregunta por dónde comprar
   const tl=text.toLowerCase();
-  if(tl.includes('dónde comprar')||tl.includes('donde comprar')||tl.includes('punto de venta')||tl.includes('tienda')){
-    addMsg('bot','Aquí tienes el mapa con todos los puntos de venta de Colmillo Blanco en Chile 📍');
-    showMap();S.step='chat';return;
+
+  // Detectar dónde comprar
+  if(tl.includes('dónde comprar')||tl.includes('donde comprar')||tl.includes('punto de venta')){
+    addMsg('bot','Aquí tienes el mapa con todos los puntos de venta de Colmillo Blanco 📍');
+    showMap(S.user.city||'');S.step='chat';return;
   }
 
+  // Flujo calculadora
   if(S.step==='calc_w'){
     const w=parseFloat(text.replace(',','.'));
-    if(isNaN(w)||w<0.5||w>120){
-      const pesoSug=S.dog.breed?getRazaInfo(S.dog.breed)?.peso:null;
-      const hint=pesoSug&&pesoSug!=='Variable'?` Para un ${S.dog.breed} lo típico es ${pesoSug}.`:'';
-      addMsg('bot',`Ingresa el peso en kilos, ej: <b>12</b> o <b>4.5</b>.${hint}`);return;
-    }
+    if(isNaN(w)||w<0.5||w>120){addMsg('bot','Ingresa el peso en kilos, ej: <b>12</b> o <b>4.5</b>');return;}
     S.dog.weight=w;S.step='calc_a';
     addMsg('bot',`${w} kg ✅ ¿Cuántos años tiene? (cachorros: ej <b>0.5</b> = 6 meses)`);return;
   }
@@ -446,7 +515,7 @@ async function processText(text){
     const a=parseFloat(text.replace(',','.'));
     if(isNaN(a)||a<0||a>25){addMsg('bot','Ingresa la edad en años. Ej: <b>2</b> o <b>0.5</b>');return;}
     S.dog.age=a;S.step='calc_act';
-    addMsg('bot','¿Cuál es el nivel de actividad de tu perro?');
+    addMsg('bot','¿Cuál es su nivel de actividad?');
     setQR(['🐢 Baja (duerme mucho)','🐕 Normal (paseos diarios)','⚡ Alta (muy activo)']);return;
   }
   if(S.step==='calc_act'){
@@ -454,41 +523,49 @@ async function processText(text){
     if(tl.includes('baja')||tl.includes('duerme')) act='baja';
     if(tl.includes('alta')||tl.includes('activo')) act='alta';
     S.dog.activity=act;
-    const calc=calcFood(S.dog.weight,S.dog.age,act);S.dog.calc=calc;
-    S.step='ask_name';
-    document.getElementById('fc').classList.add('hidden');
-    showResult(S.dog,calc);
-    const tip=calc.cat==='cachorro'?'🐶 Divide la ración en <b>3–4 comidas</b> diarias.':calc.cat==='senior'?'👴 Cuida el peso de tu senior, clave para sus articulaciones.':'💡 Divide en <b>2 comidas</b> al día para mejor digestión.';
-    addMsg('bot',`Listo! Según la tabla oficial de Colmillo Blanco: <b>${calc.dailyStr} gr/día</b> y un saco de 20 kg le dura <b>~${calc.bag20} días</b>.<br><br>${tip}<br><br>¿Cómo se llama tu perro?`);return;
+    const calc=calcFood(S.dog.weight,S.dog.age,act);
+    S.dog.calc=calc;S.step='ask_name';
+    clearFC();showResult(S.dog,calc);
+    const tip=calc.cat==='cachorro'?'🐶 Divide en <b>3–4 comidas</b> diarias.':
+              calc.cat==='senior'?'👴 Cuida el peso de tu senior, clave para sus articulaciones.':
+              '💡 Divide en <b>2 comidas</b> al día para mejor digestión.';
+    addMsg('bot',`Según la tabla oficial: <b>${calc.dailyStr} gr/día</b> y un saco de 20 kg le dura <b>~${calc.bag20} días</b>.<br><br>${tip}<br><br>¿Cómo se llama tu perro?`);
+    return;
   }
   if(S.step==='ask_name'){
     S.dog.name=text;S.step='offer_reg';
-    // Reacción al nombre
-    const reactions=['¡Qué lindo nombre!','¡Me encanta ese nombre!','¡Bonito nombre!','¡Qué original!'];
-    const reaction=reactions[Math.floor(Math.random()*reactions.length)];
-    addMsg('bot',`${reaction} <b>${text}</b> 🐾 ¿Quieres guardar su perfil y recibir recomendaciones personalizadas? Puedes elegir entre email o WhatsApp. Es completamente gratis.`);
+    const reactions=['¡Qué lindo nombre!','¡Me encanta!','¡Bonito nombre!','¡Qué original!'];
+    const r=reactions[Math.floor(Math.random()*reactions.length)];
+    addMsg('bot',`${r} <b>${text}</b> 🐾 ¿Quieres guardar su perfil y recibir recomendaciones personalizadas? Puedes elegir email o WhatsApp. Es completamente gratis.`);
     setQR(['Sí, guardar perfil','No por ahora']);return;
   }
-  if(S.step==='store'){
-    S.user.city=text;S.step='chat';
-    addMsg('bot',`Aquí tienes los puntos de venta de Colmillo Blanco en Chile 📍`);
-    showMap();return;
+  if(S.step==='offer_reg'){
+    if(tl.includes('sí')||tl.includes('si')||tl.includes('guardar')){
+      clearFC();showRegForm();
+    } else {
+      S.step='chat';addMsg('bot','¡Sin problema! ¿En qué más te puedo ayudar?');
+      setQR(['¿Por qué Colmillo Blanco?','¿Dónde encontrarlo?','Calcular de nuevo']);
+    }
+    return;
   }
+
+  // Verificar límite antes de responder
+  if(!checkLimit()) return;
 
   // FAQ sin IA
   const faqResp=getFAQResponse(text);
   if(faqResp){
     addMsg('bot',faqResp);
-    if(!S.user.contact)setTimeout(()=>setQR(['Guardar perfil de mi perro','🍽️ Calcular su alimento','¿Dónde comprar?']),400);
+    setTimeout(()=>setQR(['¿Por qué Colmillo Blanco?','¿Dónde encontrarlo?','🍽️ Calcular su alimento']),400);
     return;
   }
 
-  // IA para el resto
+  // IA
   showTyping();
   const reply=await callBackend(text,null);
   hideTyping();
   addMsg('bot',reply||'No pude conectarme en este momento 🙏 Intenta de nuevo en unos segundos.');
-  if(!S.user.contact)setTimeout(()=>setQR(['Guardar perfil de mi perro','🍽️ Calcular su alimento','¿Dónde comprar?']),400);
+  setTimeout(()=>setQR(['¿Por qué Colmillo Blanco?','¿Dónde encontrarlo?','🍽️ Calcular su alimento']),400);
 }
 
 async function send(){
@@ -518,13 +595,11 @@ document.getElementById('fileinput').addEventListener('change',async(e)=>{
       if(breed)S.dog.breed=breed;
       S.step='calc_w';
       addMsgWithCard('bot',reply,breed);
-      // Sugerir peso si conocemos la raza
       const info=breed?getRazaInfo(breed):null;
-      const pesoMsg=info&&info.peso!=='Variable'?` Para un <b>${breed}</b> el peso típico es <b>${info.peso}</b>.`:'';
-      setTimeout(()=>{
-        if(pesoMsg) addMsg('bot',`💡${pesoMsg} ¿Quieres calcular cuánto debe comer?`);
-        setQR(['🍽️ Calcular su alimento','Saber más de su raza']);
-      },400);
+      if(info&&info.peso!=='Variable'){
+        setTimeout(()=>addMsg('bot',`💡 Para un <b>${breed}</b> el peso típico es <b>${info.peso}</b>. ¿Quieres calcular cuánto debe comer?`),600);
+      }
+      setTimeout(()=>setQR(['🍽️ Calcular su alimento','Saber más de su raza']),info&&info.peso!=='Variable'?1200:400);
     }else{
       addMsg('bot','No pude conectarme para analizar la foto 🙏 ¿Quieres calcular cuánto debe comer igual?');
       S.step='calc_w';setTimeout(()=>setQR(['🍽️ Calcular su alimento']),400);
@@ -533,12 +608,13 @@ document.getElementById('fileinput').addEventListener('change',async(e)=>{
   reader.readAsDataURL(file);
 });
 
-// ── Bienvenida ──────────────────────────────────────────────────────────────
+// Bienvenida
 setTimeout(()=>{
-  addMsg('bot','Hola 👋 Bienvenido al asistente de <b>Colmillo Blanco</b>. Puedo identificar la raza de tu perro, calcular exactamente cuánto debe comer y responder todas tus dudas.');
+  addMsg('bot','Hola 👋 Bienvenido al asistente de <b>Colmillo Blanco</b>. Puedo identificar la raza de tu perro, calcular cuánto debe comer y responder todas tus dudas.');
   setTimeout(()=>{
     addMsg('bot','¿En qué te ayudo hoy?');
     setQR(['🔍 Conoce la raza de tu perro','🍽️ Calcular su alimento','💬 Hacer una consulta']);
+    updateLimitBar();
   },800);
 },300);
 </script>
